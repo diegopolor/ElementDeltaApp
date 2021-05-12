@@ -78,7 +78,7 @@ Waves
 /*Body*/
 @import url(color_theme.css);
 @import url(style_rtl.css);
-@import url(../../assets/icons/font-awesome/css/font-awesome.css);
+@import url(../../assets/icons/font-awesome/css/all.css);
 @import url(../../assets/icons/Ionicons/css/ionicons.css);
 @import url(../../assets/icons/themify-icons/themify-icons.css);
 @import url(../../assets/icons/linea-icons/linea.css);
@@ -119,7 +119,7 @@ body {
   font-weight: 400;
   font-family: "IBM Plex Sans", sans-serif;
   line-height: 1.5;
-  background-color: #ffffff; }
+  background-color: #0C1A32; }
 
 /*---basic---*/
 a {
@@ -30858,6 +30858,36 @@ button.btn.dropdown-toggle:after {
 .show > .btn-facebook.dropdown-toggle, .show > .btn-outline.btn-facebook.dropdown-toggle {
   background-color: #2d4373;
   border-color: #2d4373;
+  color: #ffffff; }
+
+/* Tiktok */
+.btn-tiktok {
+  background-color: #000300;
+  border-color: #000300;
+  color: #ffffff; }
+  .btn-tiktok:hover, .btn-tiktok:active, .btn-tiktok.active {
+    background-color: #010101;
+    border-color: #010101;
+    color: #ffffff !important; }
+  .btn-tiktok:focus, .btn-tiktok.focus {
+    color: #ffffff !important; }
+  .btn-tiktok.disabled, .btn-tiktok:disabled {
+    opacity: 0.5; }
+  .btn-tiktok:active, .btn-tiktok.active {
+    background-color: #010101;
+    border-color: #010101; }
+  .btn-tiktok.btn-outline {
+    background-color: transparent;
+    border-color: #000300;
+    color: #000300; }
+    .btn-tiktok.btn-outline:hover, .btn-tiktok.btn-outline:active, .btn-tiktok.btn-outline.active {
+      background-color: #010101;
+      border-color: #010101;
+      color: #ffffff; }
+
+.show > .btn-tiktok.dropdown-toggle, .show > .btn-outline.btn-tiktok.dropdown-toggle {
+  background-color: #010101;
+  border-color: #010101;
   color: #ffffff; }
 
 .btn-google {
