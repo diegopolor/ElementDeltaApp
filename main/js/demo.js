@@ -25,11 +25,11 @@ $(function () {
    */
   var mySkins = [
     'theme-primary',
-	'theme-secondary',
-	'theme-info',
-	'theme-success',
-	'theme-danger',
-	'theme-warning',
+    'theme-secondary',
+    'theme-info',
+    'theme-success',
+    'theme-danger',
+    'theme-warning',
   ]
 
   /**

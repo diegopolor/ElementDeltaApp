@@ -28739,13 +28739,13 @@ ul.flexbox {
     margin: 16px; }
 
 /*---background and overlay ---*/
-.bg-img {
+/* .bg-img {
   position: relative;
   border-bottom: none;
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: 0; }
+  z-index: 0; } */
 
 .box.bg-img, .box .bg-img {
   border-radius: 5px; }
