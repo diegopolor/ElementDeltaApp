@@ -49,7 +49,7 @@
 }
 @include screen-sm-max {
     .main-sidebar {
-        margin-top: $hed-max + 20;
+        margin-top: $hed-max + 10;
         padding-top: 0px;
         -webkit-transform: translate(-$sid-bar-w, 0);
         -ms-transform: translate(-$sid-bar-w, 0);
