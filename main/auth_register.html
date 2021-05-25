@@ -33,11 +33,17 @@
 								<p class="mb-0">Registrar una nueva membresia</p>							
 							</div>
 							<div class="p-40">
-								<form action="index.html" method="post">
+								<form id="formRegister">
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
+											<input name="password" type="password" class="form-control ps-15 bg-transparent" placeholder="Contraseña">
+										</div>
+									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input type="text" class="form-control ps-15 bg-transparent" placeholder="Nombre completo">
+											<input name="nickname" type="text" class="form-control ps-15 bg-transparent" placeholder="Usuario">
 										</div>
 									</div>
 									<div class="form-group">
@@ -48,29 +54,65 @@
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
-											<span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
-											<input type="password" class="form-control ps-15 bg-transparent" placeholder="Contraseña">
+											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+											<input name="username" type="text" class="form-control ps-15 bg-transparent" placeholder="Nombre">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
-											<span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
-											<input type="password" class="form-control ps-15 bg-transparent" placeholder="Vuelva a escribir la contraseña">
+											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+											<input name="lastname" type="text" class="form-control ps-15 bg-transparent" placeholder="Apellido">
 										</div>
 									</div>
-									  <div class="row">
-										<div class="col-12">
-										  <div class="checkbox">
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+											<input name="sex" type="text" class="form-control ps-15 bg-transparent" placeholder="Sexo">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+											<input name="nationality" type="text" class="form-control ps-15 bg-transparent" placeholder="Nacionalidad">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+											<input name="Membership" type="text" class="form-control ps-15 bg-transparent" placeholder="Membresia">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+											<input name="roles" type="text" class="form-control ps-15 bg-transparent" placeholder="Roles">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<input name="userValid" id="checkValid" type="checkbox" class="">
+											<label for="checkValid">Valido</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<input name="userAdmin" id="checkAdmin" type="checkbox" class="">
+											<label for="checkAdmin">Adminitrador</label>
+										</div>
+									</div>
+									<div class="row">
+									<div class="col-12">
+										<div class="checkbox">
 											<input type="checkbox" id="basic_checkbox_1" >
-											<label for="basic_checkbox_1">Estoy de acuerdo con los<a href="#" class="text-warning"><b>terminos</b></a></label>
-										  </div>
+											<label for="basic_checkbox_1">Estoy de acuerdo con los<a href="#" class="text-warning"><b> terminos</b></a></label>
 										</div>
-										<!-- /.col -->
-										<div class="col-12 text-center">
-										  <button type="submit" class="btn btn-info margin-top-10">Iniciar sesion</button>
-										</div>
-										<!-- /.col -->
-									  </div>
+									</div>
+									<!-- /.col -->
+									<div class="col-12 text-center">
+										<button type="submit" class="btn btn-info margin-top-10">Iniciar sesion</button>
+									</div>
+									<!-- /.col -->
+									</div>
 								</form>				
 								<div class="text-center">
 									<p class="mt-15 mb-0">¿Ya tienes una cuenta?<a href="auth_login.html" class="text-danger ms-5"> Iniciar sesion</a></p>
@@ -94,6 +136,7 @@
 
 
 	<!-- Vendor JS -->
+	<script src="../main/js/auth_register.js"></script>
 	<script src="js/vendors.min.js"></script>
 	<script src="js/pages/chat-popup.js"></script>
     <script src="../assets/icons/feather-icons/feather.min.js"></script>	
