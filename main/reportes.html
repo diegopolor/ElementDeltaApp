@@ -54,40 +54,11 @@
 								<i data-feather="align-left"></i>
 							</a>
 						</li>
-						<li class="btn-group nav-item d-none d-xl-inline-block">
-							<a href="contact_app_chat.html" class="waves-effect waves-light nav-link svg-bt-icon btn-primary-light" title="Chat">
-								<i data-feather="message-circle"></i>
-							</a>
-						</li>
-						<li class="btn-group nav-item d-none d-xl-inline-block">
-							<a href="mailbox.html" class="waves-effect waves-light nav-link svg-bt-icon btn-primary-light" title="Mailbox">
-								<i data-feather="at-sign"></i>
-							</a>
-						</li>
-						<li class="btn-group nav-item d-none d-xl-inline-block">
-							<a href="extra_taskboard.html" class="waves-effect waves-light nav-link svg-bt-icon btn-primary-light" title="Taskboard">
-								<i data-feather="clipboard"></i>
-							</a>
-						</li>
 					</ul> 
 				  </div>
 					
 				  <div class="navbar-custom-menu r-side">
-					<ul class="nav navbar-nav">		  
-						<li class="btn-group d-lg-inline-flex d-none">
-							<div class="app-menu">
-								<div class="search-bx mx-5">
-									<form>
-										<div class="input-group">
-										  <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-										  <div class="input-group-append">
-											<button class="btn" type="submit" id="button-addon3"><i data-feather="search"></i></button>
-										  </div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</li>
+					<ul class="nav navbar-nav">
 						<li class="btn-group nav-item d-lg-inline-flex d-none">
 							<a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link full-screen btn-primary-light" title="Full Screen">
 								<i data-feather="maximize"></i>
@@ -1886,96 +1857,10 @@
 							<!-- /.nav-tabs-custom -->
 						</div>
 						<!-- /.col -->
-						<div class="col-xl-8 col-12">
-							<div class="row">
-
-								<!-- <div class="col-12 col-lg-4">
-									<div class="box box-body pull-up">
-										<div class="d-flex justify-content-between">
-											<div class="p-0">
-												<div class="text-center">
-													<a href="#"><i class="cc XRP me-5" title="XRP"></i></a>
-												</div>
-												<div>
-													<h3 class="no-margin text-bold">Ripple</h3>
-													<span>Last Trade</span>
-												</div>
-											</div>
-											<div>
-												<div>
-													<p class="no-margin fw-600"><span class="text-primary">4,2000
-														</span> / $3.230</p>
-													<p class="no-margin">Bought</p>
-												</div>
-												<div class="mt-10">
-													<p class="no-margin fw-600"><span class="text-primary">11%</span>
-													</p>
-													<p class="no-margin">5d ago</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-12 col-lg-4">
-									<div class="box box-body pull-up">
-										<div class="d-flex justify-content-between">
-											<div class="p-0">
-												<div class="text-center">
-													<a href="#"><i class="cc EOS me-5" title="EOS"></i></a>
-												</div>
-												<div>
-													<h3 class="no-margin text-bold">EOS</h3>
-													<span>Exchange</span>
-												</div>
-											</div>
-											<div>
-												<div>
-													<p class="no-margin fw-600"><span class="text-primary">$2.7</span> /
-														$9.7</p>
-													<p class="no-margin">Sponsored</p>
-												</div>
-												<div class="mt-10">
-													<p class="no-margin fw-600"><span class="text-primary">87%</span>
-													</p>
-													<p class="no-margin">5d left</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-12 col-lg-4">
-									<div class="box box-body pull-up">
-										<div class="d-flex justify-content-between">
-											<div class="p-0">
-												<div class="text-center">
-													<a href="#"><i class="cc LSK me-5" title="LSK"></i></a>
-												</div>
-												<div>
-													<h3 class="no-margin text-bold">Lisk</h3>
-													<span>Trading</span>
-												</div>
-											</div>
-											<div>
-												<div>
-													<p class="no-margin fw-600"><span class="text-primary">$7.9</span> /
-														$7.0</p>
-													<p class="no-margin">Sponsored</p>
-												</div>
-												<div class="mt-10">
-													<p class="no-margin fw-600"><span class="text-primary">74%</span>
-													</p>
-													<p class="no-margin">5d left</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div> -->
-
-							</div>
+						<div class="col-12">
 							<div class="box bg-primary">
 								<div class="box-body">
-									<div class="row">
+									<!-- <div class="row">
 										<div class="col-lg-6 col-12">
 											<h4 class="text-white mb-50">Ficha tecnica</h4>
 											<div class="d-flex justify-content-between">
@@ -2019,82 +1904,94 @@
 												</div>
 											</div>
 										</div>
+									</div> -->
+									<div class="row">
+										<div class="col-4">
+											<h5>Periodo</h5>
+										</div>
+										<div class="col-4">
+											<p id="fecha_inicial"></p>
+										</div>
+										<div class="col-4">
+											<p id="fecha_final"></p>
+										</div>
+										<div class="row">
+											<div class="col-4">
+												<h5>Capital</h5>
+											</div>
+											<div class="col-8">
+												<p id="inictialCapital">2382.8 MXN Dos mil trecientos ochenta y dos pesos mexicanos</p>
+											</div>
+										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="box">
-								<div class="box-body">
-									<ul id="webticker-3">
-										<li class="br-1">
-											<div class="mx-20">
-												<div class="d-flex justify-content-center">
-													<h6 class="fw-300 me-5">BCH<span class="px-5">|</span>BTC </h6>
-													<h6 class="fw-300 text-danger"> -2.24%</h6>
-												</div>
-												<div class="d-block text-center">
-													<h3 class=" fw-400 my-0">0.04886 <span>USD</span></h3>
-													<p class="mb-0"><span class="fw-300">Volum</span><span
-															class="px-5">20,601</span><span>BTC</span></p>
-												</div>
-											</div>
-										</li>
-										<li class="br-1">
-											<div class="mx-20">
-												<div class="d-flex justify-content-center">
-													<h6 class="fw-300 me-5">REP<span class="px-5">|</span>BTC </h6>
-													<h6 class="fw-300 text-danger"> -2.57%</h6>
-												</div>
-												<div class="d-block text-center">
-													<h3 class=" fw-400 my-0">20.12 <span>USD</span></h3>
-													<p class="mb-0"><span class="fw-300">Volum</span><span
-															class="px-5">45,601</span><span>BTC</span></p>
-												</div>
-											</div>
-										</li>
-										<li class="br-1">
-											<div class="mx-20">
-												<div class="d-flex justify-content-center">
-													<h6 class="fw-300 me-5">EOS<span class="px-5">|</span>BTC </h6>
-													<h6 class="fw-300 text-success"> +1.54%</h6>
-												</div>
-												<div class="d-block text-center">
-													<h3 class=" fw-400 my-0">4.755 <span>USD</span></h3>
-													<p class="mb-0"><span class="fw-300">Volum</span><span
-															class="px-5">65,123</span><span>BTC</span></p>
-												</div>
-											</div>
-										</li>
-										<li class="br-1">
-											<div class="mx-20">
-												<div class="d-flex justify-content-center">
-													<h6 class="fw-300 me-5">ZRX<span class="px-5">|</span>BTC </h6>
-													<h6 class="fw-300 text-danger"> -1.33%</h6>
-												</div>
-												<div class="d-block text-center">
-													<h3 class=" fw-400 my-0">0.26877 <span>USD</span></h3>
-													<p class="mb-0"><span class="fw-300">Volum</span><span
-															class="px-5">11,435</span><span>BTC</span></p>
-												</div>
-											</div>
-										</li>
-										<li class="br-1">
-											<div class="mx-20">
-												<div class="d-flex justify-content-center">
-													<h6 class="fw-300 me-5">ETH<span class="px-5">|</span>BTC </h6>
-													<h6 class="fw-300 text-success"> +0.57%</h6>
-												</div>
-												<div class="d-block text-center">
-													<h3 class=" fw-400 my-0">159.73 <span>USD</span></h3>
-													<p class="mb-0"><span class="fw-300">Volum</span><span
-															class="px-5">12,456</span><span>BTC</span></p>
-												</div>
-											</div>
-										</li>
-
-
-									</ul>
+									<div class="row">
+										<div class="col-3">
+											<h5>Descripcion</h5>
+										</div>
+										<div class="col-9">
+											<p id="descrip_fondo"></p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-3">
+											<h5>Estrategia</h5>
+										</div>
+										<div class="col-3">
+											<p>Sistema experto</p>
+										</div>
+										<div class="col-3">
+											<p>Compra Spot</p>
+										</div>
+										<div class="col-3">
+											<p>Compra apalancada</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-3">Descripcion</div>
+										<div class="col-3"></div>
+										<div class="col-3"></div>
+										<div class="col-3"></div>
+									</div>
+									<div class="row">
+										<div class="col-4">Crecimiento Acumulativo</div>
+										<div class="col-8">
+											<p id="crecimiento_acu"></p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-3">Comision</div>
+										<div class="col-3">
+											<h5>Gestion</h5>
+										</div>
+										<div class="col-3">
+											<h5>Utilidad</h5>
+										</div>
+										<div class="col-3">
+											<h5>Otras</h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-3">Tasa comision</div>
+										<div class="col-3">
+											<p id="comision_gestion"></p>
+										</div>
+										<div class="col-3">
+											<p id="comision_utilidad"></p>											
+										</div>
+										<div class="col-3"></div>
+									</div>
+									<div class="row">
+										<div class="col-3">Monto comision</div>
+										<div class="col-3"></div>
+										<div class="col-3"></div>
+										<div class="col-3"></div>
+									</div>
+									<div class="row">
+										<div class="col-3">Capital total despues de comision</div>
+										<div class="col-3"></div>
+										<div class="col-3"></div>
+										<div class="col-3"></div>
+									</div>
 								</div>
 							</div>
 						</div>

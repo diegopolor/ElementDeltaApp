@@ -32370,3 +32370,11 @@ img.away, img.busy, img.offline, img.online {
   z-index: -1; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/*HOME*/
+.home-page {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
