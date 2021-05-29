@@ -1,5 +1,5 @@
 //Urls
-const url = "http://51.89.164.147:8000/api/report/view_report";
+const url = "http://51.89.164.147:8000/usuarios/login_token";
 // Variables
 const form = document.querySelector('#form');
 
@@ -14,12 +14,17 @@ form.addEventListener('submit', async (e) => {
             username : username,
             password : password
         }
-        await fetch( url, ({
+        const result = await fetch( url, ({
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(post)
         }))
+        if ((result.status == 200) || (result.status == 201)) {
+            location.href = "http://127.0.0.1:5500/main/reportes.html"
+        }
     }
+
+    
 })
