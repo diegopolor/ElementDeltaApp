@@ -4,5 +4,8 @@
     const profile_username = document.querySelector('#profile_username');
 
     fetch ( url )
-    .then (response => response.json())
+    .then (response => 
+        response.json(),
+        console.log(response.json())
+    )
     .then (resolve => console.log(resolve));

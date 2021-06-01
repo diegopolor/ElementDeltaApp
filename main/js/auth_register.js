@@ -7,30 +7,43 @@ formRegister.addEventListener('submit', async (e)  => {
     e.preventDefault();
     // objectInputsForm(e.target);
     // debugger
-    const data = { 
-        password: e.target.password.value,
-        usuario: e.target.nickname.value,
-        email: e.target.email.value,
-        nombre: e.target.username.value,
-        apellido: e.target.lastname.value,
-        sexos: e.target.sex.value,
-        nacionalidad: e.target.nationality.value,
-        membresia: e.target.membership.value,
-        roles: e.target.roles.value,
-        validado: e.target.checkValid.checked,
-        administrador: e.target.checkAdmin.checked,
+    try {
+        const data = { 
+            password: e.target.password.value,
+            usuario: e.target.nickname.value,
+            email: e.target.email.value,
+            nombre: e.target.username.value,
+            apellido: e.target.lastname.value,
+            sexos: e.target.sex.value,
+            nacionalidad: e.target.nationality.value,
+            membresia: e.target.membership.value,
+            roles: e.target.roles.value,
+            validado: e.target.checkValid.checked,
+            administrador: e.target.checkAdmin.checked,
+        }
+        const post = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }
+        console.log(post)
+        const result = await fetch ( url, post );
+        console.log(result)
+        if ((result.status == 200) || (result.status == 201)) {
+            location.href = "auth_login.html"
+        }
+    } catch (error) {
+        console.log(error)
     }
-    const post = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    }
-    console.log(post)
-    await fetch ( url, post );
-    // window.location.href = 
 })
+
+function showMessageError(message) {
+    const error = document.createElement('P');
+    error.textContent = message;
+    error.classList.add('alert alert-danger');
+}
 
 //  function capturarButton ( ) {
 //     const password = document.querySelector('#password').value;

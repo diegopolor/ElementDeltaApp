@@ -22,7 +22,7 @@ form.addEventListener('submit', async (e) => {
             body: JSON.stringify(post)
         }))
         if ((result.status == 200) || (result.status == 201)) {
-            location.href = "http://127.0.0.1:5500/main/reportes.html"
+            location.href = "reportes.html";
         }
     }
 
