@@ -2,47 +2,89 @@
 const url = "http://51.89.164.147:8000/api/users/create_user/";
 
 const formRegister = document.querySelector('#formRegister');
+const admin = document.querySelector('#admin');
 
-formRegister.addEventListener('submit', async (e)  => {
+// Campos 
+const password = document.querySelector('#password').addEventListener('input', readingText);
+const usuario = document.querySelector('#usuario').addEventListener('input', readingText);
+const email = document.querySelector('#email').addEventListener('input', readingText);
+const nombre = document.querySelector('#nombre').addEventListener('input', readingText);
+const apellido = document.querySelector('#apellido').addEventListener('input', readingText);
+const sexos = document.querySelector('#sexos').addEventListener('input', readingText);
+const nacionalidad = document.querySelector('#nacionalidad').addEventListener('input', readingText);
+const membresia = document.querySelector('#membresia').addEventListener('input', readingText);
+const roles = document.querySelector('#roles').addEventListener('input', readingText);
+const fields = {
+    password: '',
+    usuario: '',
+    email: '',
+    nombre: '',
+    apellido: '', 
+    sexos: '',
+    nacionalidad: '',
+    membresia: '',
+    roles: ''
+}
+
+// password.addEventListener('input', readingText);
+// usuario.addEventListener('input', readingText);
+// email.addEventListener('input', readingText);
+// nombre.addEventListener('input', readingText);
+// apellido.addEventListener('input', readingText);
+// sexos.addEventListener('input', readingText);
+// nacionalidad.addEventListener('input', readingText);
+// membresia.addEventListener('input', readingText);
+// roles.addEventListener('input', readingText);
+
+formRegister.addEventListener('submit', async (e) => {
     e.preventDefault();
     // objectInputsForm(e.target);
     // debugger
-    try {
-        const data = { 
-            password: e.target.password.value,
-            usuario: e.target.nickname.value,
-            email: e.target.email.value,
-            nombre: e.target.username.value,
-            apellido: e.target.lastname.value,
-            sexos: e.target.sex.value,
-            nacionalidad: e.target.nationality.value,
-            membresia: e.target.membership.value,
-            roles: e.target.roles.value,
-            validado: e.target.checkValid.checked,
-            administrador: e.target.checkAdmin.checked,
+
+    //Destructuring
+    const { password, usuario, email, nombre, apellido, sexos, nacionalidad, membresia, roles } = fields;
+
+    console.log(fields);
+    if ( (password == '') || (usuario == '') || (email == '') || (nombre === '') || (apellido === '') || (sexos === '') || (nacionalidad === '') || (membresia === '') || (roles === '')) {
+        showMessageError('Todos los campos son obligatorios');
+        return; 
+    }else {
+        try {
+    
+            const data = fields;    
+            const post = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }
+            console.log(post)
+            const result = await fetch ( url, post );
+            console.log(result)
+            if ((result.status == 200) || (result.status == 201)) {
+                location.href = "auth_login.html"
+            }
+        } catch (error) {
+            console.log(error)
         }
-        const post = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }
-        console.log(post)
-        const result = await fetch ( url, post );
-        console.log(result)
-        if ((result.status == 200) || (result.status == 201)) {
-            location.href = "auth_login.html"
-        }
-    } catch (error) {
-        console.log(error)
+
     }
 })
 
 function showMessageError(message) {
     const error = document.createElement('P');
     error.textContent = message;
-    error.classList.add('alert alert-danger');
+    error.classList.add('alert', 'alert-danger');
+
+    admin.appendChild ( error );
+}
+
+function readingText(e) {
+
+    fields[e.target.id] = e.target.value;
+    // console.log(fields);
+
 }
 
 //  function capturarButton ( ) {

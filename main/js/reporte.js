@@ -68,5 +68,3 @@ async function obtencionDatosReportes ()  {
     // → $12,500.00
     
 }
-
-obtencionDatosReportes();

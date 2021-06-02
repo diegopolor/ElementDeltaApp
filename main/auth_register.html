@@ -30,10 +30,10 @@
 						<div class="bg-white rounded10 shadow-lg">
 							<div class="content-top-agile p-20 pb-0">
 								<h2 class="text-primary">Empieza con nosotros</h2>
-								<p class="mb-30">Registrar una nueva membresia</p>							
+								<p class="mb-10">Registrar una nueva membresia</p>							
 							</div>
 							<div class="logo-mini w-60 mx-auto">
-								<span class="dark-logo"><img src="../images/logo-letter.png" alt="logo"></span>
+								<span class="dark-logo"><img src="../images/logo-dark-letter.png" alt="logo"></span>
 							</div>
 							<div class="p-30">
 								<form id="formRegister">
@@ -46,7 +46,7 @@
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input id="nickname" name="nickname" type="text" class="form-control ps-15 bg-transparent" placeholder="Usuario">
+											<input id="usuario" name="usuario" type="text" class="form-control ps-15 bg-transparent" placeholder="Usuario">
 										</div>
 									</div>
 									<div class="form-group">
@@ -58,31 +58,31 @@
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input id="username" name="username" type="text" class="form-control ps-15 bg-transparent" placeholder="Nombre">
+											<input id="nombre" name="nombre" type="text" class="form-control ps-15 bg-transparent" placeholder="Nombre">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input id="lastname" name="lastname" type="text" class="form-control ps-15 bg-transparent" placeholder="Apellido">
+											<input id="apellido" name="apellido" type="text" class="form-control ps-15 bg-transparent" placeholder="Apellido">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input id="sex" name="sex" type="text" class="form-control ps-15 bg-transparent" placeholder="Sexo">
+											<input id="sexos" name="sexos" type="text" class="form-control ps-15 bg-transparent" placeholder="Sexo">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input id="nationality" name="nationality" type="text" class="form-control ps-15 bg-transparent" placeholder="Nacionalidad">
+											<input id="nacionalidad" name="nacionalidad" type="text" class="form-control ps-15 bg-transparent" placeholder="Nacionalidad">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input id="membership" name="membership" type="text" class="form-control ps-15 bg-transparent" placeholder="Membresia">
+											<input id="membresia" name="membresia" type="text" class="form-control ps-15 bg-transparent" placeholder="Membresia">
 										</div>
 									</div>
 									<div class="form-group">
@@ -97,7 +97,7 @@
 											<label for="checkValid">Valido</label>
 										</div>
 									</div>
-									<div class="form-group">
+									<div class="form-group" id="admin">
 										<div class="input-group mb-3">
 											<input name="userAdmin" id="checkAdmin" type="checkbox" class="">
 											<label for="checkAdmin">Adminitrador</label>
@@ -139,7 +139,7 @@
 
 
 	<!-- Vendor JS -->
-	<script src="../main/js/auth_register.js"></script>
+	<script src="js/auth_register.js"></script>
 	<script src="js/vendors.min.js"></script>
 	<script src="js/pages/chat-popup.js"></script>
     <script src="../assets/icons/feather-icons/feather.min.js"></script>	
