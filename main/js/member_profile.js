@@ -1,5 +1,5 @@
 
-    const url = "http://51.89.164.147:8000/api/users/view_user/";
+    const url = "http://51.89.164.147:80/api/users/view_user/";
 
     const profile_username = document.querySelector('#profile_username');
 

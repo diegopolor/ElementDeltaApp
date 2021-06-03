@@ -1,7 +1,10 @@
+import { postApiRest, getApiRestToken, postApiRestToken } from './conexionApi.js';
+
 //Urls
-const url = "http://51.89.164.147:8000/usuarios/login_token";
+const url = "http://51.89.164.147:80/usuarios/login_token";
 
 // Variables
+var token = localStorage.getItem('token');
 const form = document.querySelector('#form');
 
 form.addEventListener('submit', async (e) => {
@@ -10,22 +13,29 @@ form.addEventListener('submit', async (e) => {
     let username = e.target.username.value;
     let password = e.target.password.value;
 
-    if ((username.length > 0) && (password.length > 0)) {
+    if (username > 0 || password > 0) {
         const post = {
             username : username,
             password : password
         }
-        const result = await fetch( url, ({
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(post)
-        }))
-        if ((result.status == 200) || (result.status == 201)) {
-            location.href = "reportes.html";
+        try {
+            let resolve = await postApiRest( url, post );
+            console.log(resolve)
+            const data = await resolve.json();
+            console.log(data);
+            // debugger
+            if ((resolve.status == 200 || resolve.status == 201) && (data.token)) {
+                localStorage.setItem('token', data.token);
+                location.href = "reportes.html";
+            }
+            
+        } catch (error) {
+            console.log(error);
         }
-    }
-
-    
+    } 
 })
+
+function validationLogin(user, pass) {
+    
+    return;
+}

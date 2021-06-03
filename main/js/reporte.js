@@ -15,7 +15,7 @@ const ganancia_porc = document.querySelector('#ganancia_porc');
 
 
 //Urls
-const url = "http://51.89.164.147:8000/api/report/view_report";
+const url = "http://51.89.164.147:80/api/report/view_report";
 
 // const form = document.querySelector('#form');
 // form.addEventListener('submit', (e) => {
@@ -33,6 +33,12 @@ const url = "http://51.89.164.147:8000/api/report/view_report";
 
 // })
 
+// Currency conversion
+const formatterDolar = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+});
+
 async function obtencionDatosReportes ()  {
 
     const result = await fetch( url );
@@ -45,11 +51,7 @@ async function obtencionDatosReportes ()  {
     // for (const user of data) {
     //     console.log(user.introduccion);
     // }
-    
-    const formatterDolar = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    })
+        
     text_introduction.innerHTML = user.introduccion;
     text_strategy.innerHTML = user.estrategia;
     inictialCapital.innerHTML = formatterDolar.format(user.c_inicial);
@@ -62,9 +64,5 @@ async function obtencionDatosReportes ()  {
     comision_gestion.innerHTML = formatterDolar.format(user.comision_gestion);
     comision_utilidad.innerHTML = formatterDolar.format(user.comision_utilidad);
     capital_final.innerHTML = formatterDolar.format(user.c_mes);
-    ganancia_porc.innerHTML = formatterDolar.format(user.ganancia_porc);
-
-    // console.log(formatterDolar.format( user.c_inicial))
-    // → $12,500.00
-    
+    ganancia_porc.innerHTML = formatterDolar.format(user.ganancia_porc);    
 }
