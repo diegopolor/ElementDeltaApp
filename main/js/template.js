@@ -1,3 +1,9 @@
+//logout
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', () =>{
+  localStorage.removeItem('token');
+});
+
 //[Master Javascript]
 
 //Project:	Crypto Admin - Responsive Admin Template

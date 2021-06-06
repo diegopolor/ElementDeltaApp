@@ -1,3 +1,6 @@
+import { getApiRestToken } from './conexionApi.js';
+
+addEventListener('load', obtencionDatosReportes, false);
 //Variables DHtml
 const text_introduction = document.querySelector('#text_introduction');
 const text_strategy = document.querySelector('#text_strategy');
@@ -13,26 +16,8 @@ const comision_utilidad = document.querySelector('#comision_utilidad');
 const capital_final = document.querySelector('#capital_final');
 const ganancia_porc = document.querySelector('#ganancia_porc');
 
-
 //Urls
 const url = "http://51.89.164.147:80/api/report/view_report";
-
-// const form = document.querySelector('#form');
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     console.log(e)
-//     async function EnviarRegistroPost (url, post) {
-//         let result = await fetch(url, {
-//             method: 'POST',
-//             headers: {
-//                 "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify(post)
-//         });
-//     }
-
-// })
-
 // Currency conversion
 const formatterDolar = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -41,17 +26,10 @@ const formatterDolar = new Intl.NumberFormat('en-US', {
 
 async function obtencionDatosReportes ()  {
 
-    const result = await fetch( url );
-    // console.log(result);
-    const data = await result.json();
-    console.log(data);
+    const resolve = await getApiRestToken ( url );
+    const data = await resolve.json();
+    const user = data[0];    
     
-    const user = data[0];
-    console.log(user);
-    // for (const user of data) {
-    //     console.log(user.introduccion);
-    // }
-        
     text_introduction.innerHTML = user.introduccion;
     text_strategy.innerHTML = user.estrategia;
     inictialCapital.innerHTML = formatterDolar.format(user.c_inicial);
@@ -64,5 +42,25 @@ async function obtencionDatosReportes ()  {
     comision_gestion.innerHTML = formatterDolar.format(user.comision_gestion);
     comision_utilidad.innerHTML = formatterDolar.format(user.comision_utilidad);
     capital_final.innerHTML = formatterDolar.format(user.c_mes);
-    ganancia_porc.innerHTML = formatterDolar.format(user.ganancia_porc);    
+    ganancia_porc.innerHTML = formatterDolar.format(user.ganancia_porc);
+    
 }
+
+
+
+
+    // const form = document.querySelector('#form');
+    // form.addEventListener('submit', (e) => {
+    //     e.preventDefault();
+    //     console.log(e)
+    //     async function EnviarRegistroPost (url, post) {
+    //         let result = await fetch(url, {
+    //             method: 'POST',
+    //             headers: {
+    //                 "Content-Type": "application/json"
+    //             },
+    //             body: JSON.stringify(post)
+    //         });
+    //     }
+    
+    // })

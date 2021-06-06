@@ -2,18 +2,19 @@ var token = localStorage.getItem('token');
 
 // POST USER SIN TOKEN
 export const postApiRest = async ( url, post ) => {
-    let response = fetch( url, {
+    let response = await fetch( url, {
         method: 'POST',
-        header: {
-            'Content-Type': 'application/json; charset=utf-8'
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8', 
+            'Accept': 'application/json'
         },
-        body: JSON.stringify( post )
+        body: JSON.stringify(post)
     });
     return response;
 }
 
 export const postApiRestToken = async ( url, post ) => {
-    const response = fetch( url, {
+    const response = await fetch( url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -34,3 +35,4 @@ export const getApiRestToken = async ( url ) => {
     });
     return response;
 }
+

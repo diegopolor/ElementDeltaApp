@@ -2,6 +2,9 @@ import { postApiRest } from './conexionApi.js';
 
 // Urls
 const url = "http://51.89.164.147:80/api/users/create_user/";
+
+var token = localStorage.getItem('token');
+if (token) location.href = "auth_login.html";
 // console.log('Hello')
 const formRegister = document.querySelector('#formRegister');
 const admin = document.querySelector('#admin');
@@ -38,6 +41,10 @@ nacionalidad.addEventListener('input', readingText);
 membresia.addEventListener('input', readingText);
 roles.addEventListener('input', readingText);
 
+
+
+
+
 formRegister.addEventListener('submit', async (e) => {
     e.preventDefault();
     // objectInputsForm(e.target);
@@ -52,9 +59,13 @@ formRegister.addEventListener('submit', async (e) => {
         return; 
     }else {
         try {
-            const result = await postApiRest ( url, fields );
+            let result = await postApiRest ( url, fields );
+            let user = await result.json();
             if ((result.status == 200) || (result.status == 201)) {
-                location.href = "auth_login.html"
+                if (user.token) {
+                    localStorage.setItem('token', user.token);
+                    location.href = "auth_login.html";
+                }
             }
         } catch (error) {
             console.log(error)
