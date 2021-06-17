@@ -35,4 +35,3 @@ export const getApiRestToken = async ( url ) => {
     });
     return response;
 }
-

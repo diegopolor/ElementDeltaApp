@@ -287,90 +287,78 @@
 						</div>
 						<!-- /.col -->
 						<div class="col-12">
-							<div class="table-responsive">
-								<table class="table table-dark">
-									<thead>
-										<tr>
-											<th>
-												<h5>Periodo</h5>
-											</th>
-											<th>
-												<p class="text-center" id="fecha_inicial">Fecha inicial</p>
-											</th>
-											<th colspan="2">
-												<p class="text-center" id="fecha_final">Fecha final</p>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<h5>Capital</h5>
-											</td>
-											<td colspan="3">
-												<p class="text-center" id="inictialCapital">Capital inicial</p>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<h5>Descripcion</h5>
-											</td>
-											<td colspan="3">
-												<p class="text-center" id="descrip_fondo">Descripcion</p>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<h5>Crecimiento <br> acumulativo</h5>
-											</td>
-											<td colspan="3">
-												<p class="text-center" id="crecimiento_acu">Crecimiento</p>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<h5>Comision</h5>
-											</td>
-											<td>
-												<h5 class="text-center">Gestion</h5>
-											</td>
-											<td>
-												<h5 class="text-center">Utilidad</h5>
-											</td>
-											<td>
-												<h5 class="text-center">Otras</h5>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<h5>Tasa de comision</h5>
-											</td>
-											<td>
-												<p class="text-center" id="comision_gestion"></p>
-											</td>
-											<td>
-												<p class="text-center" id="comision_utilidad"></p>
-											</td>
-											<td>
-												<p id=""></p>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<h5>Capital total <br> con comision</h5>
-											</td>
-											<td>
-												<p class="text-center" id="capital_final"></p>
-											</td>
-											<td>
-												<h5>Retorno de inversion final</h5>
-											</td>
-											<td>
-												<p class="text-center" id="ganancia_porc"></p>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+							<div class="container-full">
+								<div class="row mx-0 d-flex flex-wrap" id="buttonReport">
+
+								</div>
+							</div>
+							<div class="container-full d-none" id="reporte">
+								<div class="row mx-0 mb-3 px-0">
+									<div class="col-4 bg-danger">
+										<h3 class="text-center fs-4"><strong>Periodo</strong></h3>
+									</div>
+									<div class="col-4 bg-dark d-flex align-items-center justify-content-center">
+										<p class="text-center h4 mb-0" id="fecha_inicial">Fecha inicial</p>
+									</div>
+									<div class="col-4 bg-dark d-flex align-items-center justify-content-center">
+										<p class="text-center h4 mb-0" id="fecha_final">Fecha final</p>
+									</div>
+								</div>
+								<div class="row mx-0 mb-3 px-0">
+									<div class="col-4 bg-danger">
+										<h3 class="text-center fs-4"><strong>Capital</strong></h3>
+									</div>
+									<div class="col-8 bg-dark d-flex align-items-center justify-content-center">
+										<p class="text-center h4 mb-0" id="inictialCapital">Capital inicial</p>
+									</div>
+								</div>
+								<div class="row mx-0 mb-3 px-0">
+									<div class="col-4 bg-danger">
+										<h3 class="text-center fs-4"><strong>Descripcion</strong></h3>
+									</div>
+									<div class="col-8 bg-dark d-flex align-items-center justify-content-center">
+										<p class="text-center h4 mb-0" id="descrip_fondo">Descripcion</p>
+									</div>
+								</div>
+								<div class="row mx-0 mb-3 px-0">
+									<div class="col-4 bg-danger">
+										<h3 class="text-center fs-4 text-wrap"><strong>Crecimiento acumulativo</strong></h3>
+									</div>
+									<div class="col-8 bg-dark d-flex align-items-center justify-content-center">
+										<p class="text-center h4 mb-0" id="crecimiento_acu">Crecimiento</p>
+									</div>
+								</div>
+								<div class="row mx-0 mb-3 px-0">
+									<div class="col-12 bg-danger">
+										<h3 class="text-center fs-4"><strong>Comision</strong></h3>
+									</div>
+									<div class="col-6 bg-secondary d-flex align-items-center justify-content-center">
+										<p class="text-center h4 my-3">Gestion</p>
+									</div>
+									<div class="col-6 bg-secondary d-flex align-items-center justify-content-center">
+										<p class="text-center h4 my-3">Utilidad</p>
+									</div>
+									<div class="col-6 bg-dark d-flex align-items-center justify-content-center">
+										<p class="text-center h4 my-4" id="comision_gestion">Comision gestion</p>
+									</div>
+									<div class="col-6 bg-dark d-flex align-items-center justify-content-center">
+										<p class="text-center h4 my-4" id="comision_utilidad">Comision utilidad</p>
+									</div>
+								</div>
+								<div class="row mx-0 mb-3 px-0">
+									<div class="col-12 bg-danger">
+										<h3 class="text-center fs-4"><strong>Capital total con comision</strong></h3>
+									</div>
+									<div class="col-12 bg-dark d-flex align-items-center justify-content-center">
+										<p class="text-center h4 my-4" id="capital_final">Capital total</p>
+									</div>
+									<div class="col-12 bg-danger">
+										<h3 class="text-center fs-4"><strong>Retorno de inversion final</strong></h3>
+									</div>
+									<div class="col-12 bg-dark d-flex align-items-center justify-content-center">
+										<p class="text-center h4 my-4" id="ganancia_porc">Retorno final</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -242,7 +242,31 @@
 		<div class="content-wrapper">
 			<div class="container-full">
 				<!-- Main content -->
-				<h1 class="display-1 text-center">Welcome Signal</h1>
+				<section class="content">
+					<div class="row">
+						<div class="col-6">
+							<div class="box bg-warning bg-brick-dark rounded30 mb-md-30 mt-30 mb-0">
+								<div class="box-body">
+									<div>
+										<i class="cc BTC text-white" title="BTC"></i>
+										<h4 id="moneda">Bitcoin</h4>
+										<div>
+											<p id="fecha">fecha</p>
+										</div>
+									</div>
+									<div class="d-flex">
+										<i class="fas fa-crosshairs me-2"> </i>
+										<p id="objetivo1" class="me-4">3.3017 BTC</p>
+										<i class="fas fa-crosshairs me-2"></i>
+										<p id="objetivo2" class="me-4">3.3017 BTC</p>
+										<i class="fas fa-crosshairs me-2"></i>
+										<p id="objetivo3" class="me-4">3.3017 BTC</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 		</div>
 		<!-- /.content-wrapper -->
@@ -265,6 +289,8 @@
   <!-- ./wrapper -->	
 	
 	<!-- Vendor JS -->
+	<script src="js/conexionApi.js" type="module"></script>
+	<script src="js/signal.js" type="module"></script>
 	<script src="js/vendors.min.js"></script>
 	<script src="js/pages/chat-popup.js"></script>
     <script src="../assets/icons/feather-icons/feather.min.js"></script>

@@ -1,13 +1,14 @@
 import { postApiRest } from './conexionApi.js';
 
 //Urls
-const url = "http://51.89.164.147:80/usuarios/login_token";
+const url = "http://51.89.164.147:8000/usuarios/login_token";
 
 // Variables
 var token = localStorage.getItem('token');
-if (token) location.href = "reportes.html";
+if (token) location.href = "index.html";
 // const form = document.querySelector('#form');
 const partFinalForm = document.querySelector('#partFinalForm');
+
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -28,34 +29,32 @@ form.addEventListener('submit', async (e) => {
         }
         try {
             let resolve = await postApiRest( url, post );
-            // debugger
-            let data = await resolve.json();
-            console.log(data)
-            
             if ((resolve.status == 200 || resolve.status == 201)) {
-                if (data.token) {
-                    localStorage.setItem('token', data.token);
-                    location.href = "reportes.html";
-                }
+                let data = await resolve.json();
+                console.log(data)
+                if (data.msg) {
+                    showMessageError(data.msg);
+                    if (data.token) {
+                        localStorage.setItem('token', data.token);
+                        location.href = "index.html";
+                    }
+                    return;
+                } 
             }
-            showMessageError('El usuario no existe, por favor verifique');
-
         } catch (error) {
-            console.log(error);
+            console.log('No fue posible conectarse');
         }
     }
 })
+
+// Mostrar mensaje de error.
 function showMessageError(message) {
     const error = document.createElement('P');
     error.textContent = message;
     error.classList.add('alert', 'alert-danger');
 
     partFinalForm.appendChild ( error );
-    // setTimeout(() => {
-    //     error.remove();
-    // }, 3000);
-}
-function validationLogin(user, pass) {
-
-    return;
+    setTimeout(() => {
+        error.remove();
+    }, 3000);
 }

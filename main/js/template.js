@@ -3,6 +3,9 @@ const logout = document.querySelector('#logout');
 logout.addEventListener('click', () =>{
   localStorage.removeItem('token');
 });
+if (!localStorage.token) {
+  location.href = "auth_login.html";
+}
 
 //[Master Javascript]
 
