@@ -1,16 +1,16 @@
-import { postApiRest } from './conexionApi.js';
+// import { insertData } from './conexionApi.js';
 
 //Urls
-const url = "http://51.89.164.147:8000/usuarios/login_token";
+const url = "http://51.89.164.147:80/usuarios/login_token";
 
 // Variables
 var token = localStorage.getItem('token');
-if (token) location.href = "index.html";
+if (token) location.href = "reporte.html";
 // const form = document.querySelector('#form');
 const partFinalForm = document.querySelector('#partFinalForm');
 
 
-form.addEventListener('submit', async (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     let username = e.target.username.value;
@@ -23,29 +23,46 @@ form.addEventListener('submit', async (e) => {
         showMessageError('Todos los campos son obligatorios');
         return;
     } else {
-        const post = {
-            username : username,
-            password : password
-        }
+        const post = new FormData();
+        post.append('username', username);
+        post.append('password', password);
+        console.log(...post);
         try {
-            let resolve = await postApiRest( url, post );
-            if ((resolve.status == 200 || resolve.status == 201)) {
-                let data = await resolve.json();
-                console.log(data)
-                if (data.msg) {
-                    showMessageError(data.msg);
-                    if (data.token) {
-                        localStorage.setItem('token', data.token);
-                        location.href = "index.html";
-                    }
-                    return;
-                } 
-            }
+            insertData(post);
         } catch (error) {
             console.log('No fue posible conectarse');
         }
     }
 })
+
+function insertData (data) {
+    // Creo el objecto
+    const xhttp = new XMLHttpRequest();
+    // Abrir la conexion
+    xhttp.open('POST', url, true);
+
+    
+    xhttp.onload = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200 || this.status === 201) {
+                const response = JSON.parse(this.responseText);
+                debugger
+                console.log(response);
+                if (response.msg) {
+                    showMessageError(response.msg);
+                    if (response.token) {
+                        localStorage.setItem('token', response.token);
+                        location.href = "reporte.html";
+                    }
+                }
+            }
+        }
+    }
+    // xhttp.setRequestHeader('Content-Type', 'multipart/form-data; boundary=something');
+    // xhttp.setRequestHeader('Accept', 'application/json');
+    xhttp.send(data);
+}
+
 
 // Mostrar mensaje de error.
 function showMessageError(message) {
