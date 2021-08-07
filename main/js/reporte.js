@@ -1,8 +1,9 @@
 // import { getApiRestToken } from './conexionApi.js';
 //Urls
-const config = require('/node/config.js');
 
-const url = "http://51.89.164.147:80/api/report/view_report";
+
+const url = `http://51.89.164.147:80/api/report/view_report`;
+
 
 addEventListener('load', getApiRestToken, false);
 
@@ -30,6 +31,8 @@ const formatterDolar = new Intl.NumberFormat('en-US', {
 
 //AJAX puro
 function getApiRestToken() {
+    
+
     // Creo el objecto
     const xhttp = new XMLHttpRequest();
     // Abrir la conexion
@@ -55,7 +58,6 @@ function getApiRestToken() {
                 buttonReportMes.forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         let numero = e.target.accessKey;
-                        console.log(numero)
                         printDataReport(response[numero]);
                     });
                 });
@@ -86,7 +88,6 @@ function printButtonReport(users, report, id) {
 
 /** Pintar reporte en pantalla */
 function printDataReport(report) {
-    console.log(config.IP);
     text_introduction.innerText = report.introduccion;
     text_strategy.innerText = report.estrategia;
     inictialCapital.innerHTML = formatterDolar.format(report.c_inicial);

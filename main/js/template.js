@@ -1,11 +1,54 @@
-//logout
-const logout = document.querySelector('#logout');
-logout.addEventListener('click', () =>{
-  localStorage.removeItem('token');
-});
+//verifica si tiene token almacenado en el localStorage, si no lp tiene es porque no tiene sesion activa
 if (!localStorage.token) {
   location.href = "auth_login.html";
 }
+
+//logout
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', async () => {
+  
+  if (localStorage.token) {
+    let response = await fetch("http://51.89.164.147/api/token/tokendelete/", {
+      method: 'GET',
+      headers: {
+        "Authorization": `Token ${localStorage.token}`
+      }
+    });
+
+    if (response.ok) {
+      localStorage.removeItem('token');
+      location.href = "auth_login.html";
+    }
+
+  }
+  
+  
+});
+
+
+
+const tokenVerify = async () => {
+  let response = await fetch("http://51.89.164.147/api/token/tokenverify/", {
+    method: 'GET',
+    headers: {
+      "Authorization": `Token ${localStorage.token}`
+              }        
+    });
+
+  if (!response.ok) {
+    localStorage.removeItem('token');
+    location.href  = "auth_login.html";
+  }
+
+}
+  
+tokenVerify();
+
+
+
+
+
+
 
 //[Master Javascript]
 
