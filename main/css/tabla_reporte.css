@@ -1,0 +1,141 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ol, ul{
+    padding-left:0;
+}
+
+.content-top{
+    border-radius: 2px 2px 0px 0px;
+
+}
+
+.reportes ul li{
+    list-style: none;
+    display:inline-block;
+    height:100%;  
+
+}
+
+.tabs-reportes{
+    width: 100%;
+    margin: auto;
+}
+
+.tabla-reportes{
+    width: 100%;
+    margin:auto;
+}
+
+.contenedor-reportes{
+    border: 1px solid #0c1a32;
+    margin:auto;
+    width: 100%;
+    margin: 0 0 5em 0;
+    font-size: 1.2em;
+}
+
+
+
+.reporte-bg-yellow{ 
+    background-color: #FF9D18;
+    color: white;
+    height: 3em;
+    display:flex;
+    
+    margin: 0;
+    margin-top:2px;
+    display:flex;
+    flex-wrap: wrap;
+    line-height: 3em;
+    text-align: center;
+    
+
+}
+
+
+.reporte-bg-blue{ 
+    background-color: #31476e;
+    color: #ffffff;
+    height: 3em;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.1);
+    
+    margin: 0;
+    margin-top:2px;
+    display:flex;
+    flex-wrap: wrap;
+    text-align: center;
+    line-height: 3em;
+}
+
+
+
+.border-right{border-right: 2px solid rgba(14, 14, 14, 0.144);}
+/*bordes responsive */
+.r-border-bottom{border-bottom: 0px solid rgba(255, 255, 255, 0.308);}
+.r-border-bottom-right{border-right: 0px solid rgba(255, 255, 255, 0.308);}
+
+
+.tabs-custom >.nav-tabs > button.active {
+  background-color: #1db1ae;
+  color: #ffffff;
+ 
+ 
+}
+
+.tabs-custom >.nav-tabs > button {
+border-radius: 0;
+background-color:#e0e0e0 ;
+color: #3f3f3f;
+border-left-color: rgba(255, 255, 255, 0.12);
+border-right-color: rgba(255, 255, 255, 0.12);
+
+}
+
+.tab-content > div {
+
+    border-radius: 5px;
+    padding: 2%;
+    margin: 2% 0 2% 0;
+
+}
+
+.text-money{color: #57e434;}
+.txt-destacar{color: #FF9D18;}
+
+
+
+/* Tamaño Extra SM de boostrap*/
+
+ @media (max-width:576px)  {
+
+    .border-right{border-right: 0px solid rgba(255, 255, 255, 0.479);} 
+
+    .r-border-bottom{border-bottom: 2px solid rgba(0, 0, 0, 0.080);}
+    .r-border-right{border-right: 2px solid  rgba(0, 0, 0, 0.080);}
+    .r-d-border-bottom{border-bottom: 1px solid rgba(255, 255, 255, 0.671);}
+    .r-d-border-right{border-right: 1px solid  rgb(255, 255, 255, 0.671);}
+
+    .contenedor-reportes{
+        font-size: 1em;
+    }
+
+    .tabla-reportes{
+        width: 100%;
+        margin:0;
+    }
+
+    .reporte-bg-yellow{ 
+        height: 100%;
+        line-height: 3em;
+
+    }
+
+    .reporte-bg-blue{ 
+        height: 100%;
+        line-height: 3em
+    }
+
+ }

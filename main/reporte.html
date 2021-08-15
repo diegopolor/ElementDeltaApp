@@ -20,6 +20,8 @@
 	<!-- Style-->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/skin_color.css">
+	<link rel="stylesheet" href="css/customer-styles.css">
+	<link rel="stylesheet" href="css/tabla_reporte.css">
 
 </head>
 
@@ -229,7 +231,8 @@
 								<ul class="nav nav-tabs justify-content-center">
 									<li><a class="active" href="#introduction" data-bs-toggle="tab">Introducción</a></li>
 									<li><a href="#strategy" data-bs-toggle="tab">Estrategia</a></li>
-									<li><a href="#operations" data-bs-toggle="tab">Futuras Operaciones</a></li>									
+									<li><a href="#operations" data-bs-toggle="tab">Futuras Operaciones</a></li>	
+									<li><a href="#DFondos" data-bs-toggle="tab">Descripcion de Fondo</a></li>
 								</ul>
 
 								<div class="tab-content">
@@ -237,8 +240,8 @@
 									<div class="active tab-pane" id="introduction">
 										<div class="box b-1 no-shadow">
 											<div class="box-body bb-1 border-fade">
-												<h3 class="text-primary">Introducción</h3>
-												<p class="lead" id="text_introduction"></p>
+												<h3 class="text-primary fontsize-reports-title">Introducción</h3>
+												<p class="fontsize-reports" id="text_introduction"></p>
 											</div>
 											<!-- /.box-body -->
 										</div>
@@ -255,8 +258,8 @@
 										<div class="box b-1 no-shadow">
 
 											<div class="box-body bb-1 border-fade">
-												<h3 class="text-primary">Estrategia</h3>
-												<p class="lead" id="text_strategy"></p>
+												<h3 class="text-primary fontsize-reports-title">Estrategia</h3>
+												<p class="fontsize-reports" id="text_strategy"></p>
 											</div>
 											<!-- /.tab-content -->
 										</div>
@@ -267,17 +270,28 @@
 									<div class="tab-pane" id="operations">
 										<div class="box b-1 no-shadow">
 											<div class="box-body bb-1 border-fade">
-												<h3 class="text-primary">Futuras operaciones</h3>
-												<p class="lead" id="f_operations">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime unde architecto eligendi repellendus corporis minus obcaecati dolore. Optio ea magnam in assumenda soluta dolores qui debitis accusantium quis. Quaerat, provident?
-												Itaque voluptate commodi delectus corrupti? Quas repellat dolor eveniet sit ipsam cupiditate mollitia tempora ipsa iusto, sapiente earum dolore dolores nobis in dicta illo doloremque quod optio aliquam saepe deserunt!
-												Adipisci dolorem, expedita ea odit consequuntur exercitationem. Nisi incidunt soluta quos eveniet doloremque nostrum aliquam nulla enim minima facilis. Ea reprehenderit autem amet obcaecati iure cumque, reiciendis eius temporibus earum.
-												Nam rem minus quo porro fuga! Deleniti voluptatem debitis eius praesentium illum assumenda? Laborum asperiores magni dolor voluptatibus quos ad animi. Cupiditate repellat reiciendis sint, ipsa tempore delectus blanditiis vel!
-												Recusandae, enim vitae? Ex odit nesciunt libero, consequatur doloribus praesentium quasi! Ullam aut molestiae amet consequuntur minima deserunt assumenda ad a similique. Dolorem corrupti, provident quod impedit natus maiores repellat.</p>
+												<h3 class="text-primary fontsize-reports-title">Futuras operaciones</h3>
+												<p class="fontsize-reports" id="f_operations"></p>
 											</div>
 											<!-- /.box-body -->
 										</div>
 										<!-- /.box -->
 									</div>
+
+
+									<div class="tab-pane" id="DFondos">
+										<div class="box b-1 no-shadow">
+											<div class="box-body bb-1 border-fade">
+												<h3 class="text-primary fontsize-reports-title">Descripción de Fondos</h3>
+												<p class="fontsize-reports" id="descrip_fondo"></p>
+											</div>
+											<!-- /.box-body -->
+										</div>
+										<!-- /.box -->
+									</div>
+
+
+
 								</div>
 								<!-- /.tab-content -->
 							</div>
@@ -293,82 +307,51 @@
 							</div>
 							<!-- ./Botones -->
 							<!-- Reportes -->
-							<div class="container-full" id="reporte">
-								<!-- Periodo / Fechas -->
-								<div class="row mx-0 mb-3 px-0">
-									<div class="col-4 border-bottom-reports">
-										<h3 class="text-center fs-4"><strong>Periodo</strong></h3>
-									</div>
-									<div class="col-4 bg-dark d-flex align-items-center justify-content-center">
-										<p class="text-center h4 mb-0" id="fecha_inicial">Fecha inicial</p>
-									</div>
-									<div class="col-4 bg-dark d-flex align-items-center justify-content-center">
-										<p class="text-center h4 mb-0" id="fecha_final">Fecha final</p>
-									</div>
-								</div>
+							<div class="contenedor-reportes">
+								<div class="tabla-reportes">
+									<div class="reportes ">
 
-								<!-- Capital -->
-								<div class="row mx-0 mb-3 px-0">
-									<div class="col-4  border-bottom-reports">
-										<h3 class="text-center fs-4"><strong>Capital</strong></h3>
-									</div>
-									<div class="col-8 bg-dark d-flex align-items-center justify-content-center">
-										<p class="text-center h4 mb-0" id="inictialCapital">Capital inicial</p>
-									</div>
-								</div>
+										<!-- Destacado -->
+										<ul class=" col-md-12  reporte-bg-yellow content-top">
+											<li class="col-md-1 col-5 r-d-border-bottom r-d-border-right "> <b>Fecha</b> </li>
+											<li class="col-md-3 col-7 border-right r-d-border-bottom"><span id="fecha"></span></li>
+											<li class="col-sm-2 col-12 r-d-border-bottom border-right"> <b>Periodo</b></li>
+											<li class="col-md-1 col-2 r-d-border-right r-d-border-bottom "> <b>Inicial</b> </li>
+											<li class="col-md-2 col-4 r-d-border-right r-d-border-bottom" ><span id="fecha_inicial"></span></li>
+											<li class="col-md-1 col-2 r-d-border-right r-d-border-bottom"> <b>Final</b></li>
+											<li class="col-md-2 col-4 r-d-border-bottom"><span id="fecha_final"></span></li>
+										</ul>
+										<ul class=" col-md-12 reporte-bg-blue ">
+											<li class="col-md-2 col-6 r-border-bottom r-border-bottom-right border-right"> <b>Capital Inicial</b> </li>
+											<li class="col-md-2 col-6 r-border-bottom border-right "><span class = "text-money" id="inictialCapital"></span></li>
+											<li class="col-md-2 col-6 r-border-bottom r-border-right"> <b>Capital Original</b></li>
+											<li class="col-md-2 col-6 r-border-bottom border-right"><span class = "text-money" id="capital_original"></span></li>
+											<li class="col-md-2 col-6 r-border-bottom r-border-right"> <b>Capital Mes</b> </li>
+											<li class="col-md-2 col-6 r-border-bottom"><span class = "text-money" id="capital_mes"></span></li>
+										</ul>
+										<ul class=" col-md-12 reporte-bg-blue">
+											<li class="col-md-2 col-4 r-border-bottom r-border-right"><b>Operaciones</b></li>
+											<li class="col-md-1 col-2 r-border-bottom r-border-right border-right"><span class = "txt-destacar" id="operaciones"></span></li>
+											<li class="col-md-2 col-4 r-border-bottom r-border-right"> <b>Ganancia</b> </li>
+											<li class="col-md-2 col-2 r-border-bottom border-right"><span class="txt-destacar" id="ganancia_porc"></span></li>
+											<li class="col-md-3 col-6 border-right  r-border-bottom"> <b>Dinero Operaciones</b> </li>
+											<li class="col-md-2 col-6 r-border-bottom"><span class = "text-money" id="d_operaciones"></span></li>
 
-								<!-- Descripcion -->
-								<div class="row mx-0 mb-3 px-0">
-									<div class="col-4 border-bottom-reports">
-										<h3 class="text-center fs-4"><strong>Descripcion</strong></h3>
-									</div>
-									<div class="col-8 bg-dark d-flex align-items-center justify-content-center">
-										<p class="text-center h4 mb-0" id="descrip_fondo">Descripcion</p>
-									</div>
-								</div>
-
-								<!-- Crecimiento acumulativo -->
-								<div class="row mx-0 mb-3 px-0">
-									<div class="col-4 border-bottom-reports">
-										<h3 class="text-center fs-4 text-wrap"><strong>Crecimiento acumulativo</strong></h3>
-									</div>
-									<div class="col-8 bg-dark d-flex align-items-center justify-content-center">
-										<p class="text-center h4 mb-0" id="crecimiento_acu">Crecimiento</p>
-									</div>
-								</div>
-								
-								<!-- Comision -->
-								<div class="row mx-0 mb-3 px-0">
-									<div class="col-12 border-bottom-reports">
-										<h3 class="text-center fs-4"><strong>Comision</strong></h3>
-									</div>
-									<div class="col-6 bg-secondary d-flex align-items-center justify-content-center">
-										<p class="text-center h4 my-3">Gestion</p>
-									</div>
-									<div class="col-6 bg-secondary d-flex align-items-center justify-content-center">
-										<p class="text-center h4 my-3">Utilidad</p>
-									</div>
-									<div class="col-6 bg-dark d-flex align-items-center justify-content-center">
-										<p class="text-center h4 my-4" id="comision_gestion">Comision gestion</p>
-									</div>
-									<div class="col-6 bg-dark d-flex align-items-center justify-content-center">
-										<p class="text-center h4 my-4" id="comision_utilidad">Comision utilidad</p>
-									</div>
-								</div>
-
-								<!-- Capital final -->
-								<div class="row mx-0 mb-3 px-0">
-									<div class="col-12 border-bottom-reports">
-										<h3 class="text-center fs-4"><strong>Capital total con comision</strong></h3>
-									</div>
-									<div class="col-12 bg-dark d-flex align-items-center justify-content-center">
-										<p class="text-center h4 my-4" id="capital_final">Capital total</p>
-									</div>
-									<div class="col-12 border-bottom-reports">
-										<h3 class="text-center fs-4"><strong>Retorno de inversion final</strong></h3>
-									</div>
-									<div class="col-12 bg-dark d-flex align-items-center justify-content-center">
-										<p class="text-center h4 my-4" id="ganancia_porc">Retorno final</p>
+										</ul>
+										<!-- Destacado -->
+										<ul class=" col-md-12 reporte-bg-yellow">
+											<li class="col-md-4 col-12 border-right r-d-border-bottom"> <b>Comisiones</b> </li>
+											<li class="col-md-2 col-6 r-d-border-bottom r-d-border-right"> <b>Gestión</b> </li>
+											<li class="col-md-2 col-6 r-d-border-bottom border-right"><span  id="comision_gestion"></span> </li>
+											<li class="col-md-2 col-6 r-d-border-bottom r-d-border-right"> <b>Utilidad</b> </li>
+											<li class="col-md-2 col-6 r-d-border-bottom "><span  id="comision_utilidad"></span></li>
+										</ul>
+										<ul class=" col-md-12 reporte-bg-blue content-border-bottom">
+											<li class="col-md-3 r-border-bottom r-border-right col-8"> <b>Crecimiento Acumulativo</b> </li>
+											<li class="col-md-2 r-border-bottom col border-right"><span class = "text-money" id="crecimiento_acu"></span> </li>
+											<li class="col-md-2 r-border-bottom col-12 "> <b>Tipo Moneda</b></li>
+											<li class="col-md-5 col-12 r-border-bottom"><span class = "txt-destacar" id="tipo_moneda"></span></li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -671,8 +654,8 @@
 
 
 	<!-- Vendor JS -->
-	<script src="js/conexionApi.js" type="module"></script>
-	<script src="js/reporte.js" type="module"></script>
+	
+	<script src="js/reporte.js"></script>
 	<script src="js/vendors.min.js"></script>
 	<script src="js/pages/chat-popup.js"></script>
 	<script src="../assets/icons/feather-icons/feather.min.js"></script>

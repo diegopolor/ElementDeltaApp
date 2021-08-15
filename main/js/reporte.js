@@ -2,7 +2,7 @@
 //Urls
 
 
-const url = `http://51.89.164.147:80/api/report/view_report`;
+const url = `http://51.89.164.147/api/report/view_report`;
 
 
 addEventListener('load', getApiRestToken, false);
@@ -11,15 +11,20 @@ addEventListener('load', getApiRestToken, false);
 const text_introduction = document.querySelector('#text_introduction');
 const text_strategy = document.querySelector('#text_strategy');
 const f_operations = document.querySelector('#f_operations');
+const descrip_fondo = document.querySelector('#descrip_fondo');
+const fecha = document.querySelector('#fecha');
 const fecha_inicial = document.querySelector('#fecha_inicial');
 const fecha_final = document.querySelector('#fecha_final');
 const inictialCapital = document.querySelector('#inictialCapital');
-const descrip_fondo = document.querySelector('#descrip_fondo');
+const originalCapital = document.querySelector('#capital_original');
+const capitalMes = document.querySelector("#capital_mes")
+const operaciones = document.querySelector("#operaciones")
+const d_operaciones = document.querySelector("#d_operaciones")
 const crecimiento_acu = document.querySelector('#crecimiento_acu');
+const ganancia_porc = document.querySelector('#ganancia_porc');
 const comision_gestion = document.querySelector('#comision_gestion');
 const comision_utilidad = document.querySelector('#comision_utilidad');
-const capital_final = document.querySelector('#capital_final');
-const ganancia_porc = document.querySelector('#ganancia_porc');
+const tipoMoneda = document.querySelector("#tipo_moneda")
 const buttonReport = document.querySelector(".bottons-month"); // div#buttonReport
 const reporte = document.getElementById('reporte');
 
@@ -98,6 +103,11 @@ function printDataReport(report) {
     crecimiento_acu.innerHTML = formatterDolar.format(report.crecimiento_acu);
     comision_gestion.innerHTML = formatterDolar.format(report.comision_gestion);
     comision_utilidad.innerHTML = formatterDolar.format(report.comision_utilidad);
-    capital_final.innerHTML = formatterDolar.format(report.c_mes);
-    ganancia_porc.innerHTML = formatterDolar.format(report.ganancia_porc);
+    ganancia_porc.innerHTML = report.ganancia_porc;
+    fecha.innerHTML = report.fecha;
+    originalCapital.innerHTML = formatterDolar.format(report.c_original);
+    capitalMes.innerHTML = formatterDolar.format(report.c_mes);
+    operaciones.innerHTML = report.operaciones;
+    d_operaciones.innerHTML = formatterDolar.format(report.dinero_operaciones) ;
+    tipoMoneda.innerHTML = report.tipo_moneda;
 }

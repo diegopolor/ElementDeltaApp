@@ -37,7 +37,8 @@ const tokenVerify = async () => {
 
   if (!response.ok) {
     localStorage.removeItem('token');
-    location.href  = "auth_login.html";
+    location.href = "auth_login.html";
+   
   }
 
 }
