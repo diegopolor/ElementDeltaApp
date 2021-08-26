@@ -16,8 +16,8 @@ const fecha = document.querySelector('#fecha');
 const fecha_inicial = document.querySelector('#fecha_inicial');
 const fecha_final = document.querySelector('#fecha_final');
 const inictialCapital = document.querySelector('#inictialCapital');
-const originalCapital = document.querySelector('#capital_original');
-const capitalMes = document.querySelector("#capital_mes")
+const capitalApertura = document.querySelector('#capital_apertura');
+const capitalFinal = document.querySelector("#capital_final")
 const operaciones = document.querySelector("#operaciones")
 const d_operaciones = document.querySelector("#d_operaciones")
 const crecimiento_acu = document.querySelector('#crecimiento_acu');
@@ -25,8 +25,13 @@ const ganancia_porc = document.querySelector('#ganancia_porc');
 const comision_gestion = document.querySelector('#comision_gestion');
 const comision_utilidad = document.querySelector('#comision_utilidad');
 const tipoMoneda = document.querySelector("#tipo_moneda")
+const retornoInversion = document.querySelector('#retorno_inversion')
+const c_post_comisiones = document.querySelector("#c_post_comisiones");
+
+
 const buttonReport = document.querySelector(".bottons-month"); // div#buttonReport
 const reporte = document.getElementById('reporte');
+
 
 // Currency conversion
 const formatterDolar = new Intl.NumberFormat('en-US', {
@@ -43,13 +48,19 @@ function getApiRestToken() {
     // Abrir la conexion
     xhttp.open('GET', url, true);
 
+    xhttp.setRequestHeader('Cache-Control', 'max-age=1000');
     xhttp.setRequestHeader('Authorization', `Token ${localStorage.token}`);
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200 || this.status === 201) {
                 const response = JSON.parse(this.responseText);
                 
-
+              
+                if (response.length > 0) {
+                    //envia los datos a imprimir en el perfil
+                    let numReports = response.length
+                    setDataProfileReport(response, numReports);
+                }
                 // Creacion de los botones del mes
                 // Por cada numero de veces que recorre el array crea un boton
                 var id = 0;
@@ -74,6 +85,20 @@ function getApiRestToken() {
     // xhttp.setRequestHeader('Accept', 'application/json');
     xhttp.send();
 }
+
+
+const setDataProfileReport = (report, numReports) => {
+    
+    //crecimiento del mes
+    let lastMes = report[numReports - 1].crecimiento_acu;
+    let numMeses= numReports;
+
+    localStorage.setItem("lastMonth", lastMes);
+    localStorage.setItem("num_Meses", numMeses);
+    
+
+}
+
 
 
 //Botones de reportes multiples
@@ -105,9 +130,11 @@ function printDataReport(report) {
     comision_utilidad.innerHTML = formatterDolar.format(report.comision_utilidad);
     ganancia_porc.innerHTML = report.ganancia_porc;
     fecha.innerHTML = report.fecha;
-    originalCapital.innerHTML = formatterDolar.format(report.c_original);
-    capitalMes.innerHTML = formatterDolar.format(report.c_mes);
+    capitalApertura.innerHTML = formatterDolar.format(report.c_apertura);
+    capitalFinal.innerHTML = formatterDolar.format(report.c_final);
     operaciones.innerHTML = report.operaciones;
     d_operaciones.innerHTML = formatterDolar.format(report.dinero_operaciones) ;
     tipoMoneda.innerHTML = report.tipo_moneda;
+    retornoInversion.innerHTML = formatterDolar.format(report.retorno_inversion);
+    c_post_comisiones.innerHTML = formatterDolar.format(report.c_post_comisiones);
 }

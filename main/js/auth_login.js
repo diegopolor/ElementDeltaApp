@@ -1,7 +1,7 @@
 // import { insertData } from './conexionApi.js';
 
 //Urls
-const url = "http://51.89.164.147/usuarios/login_token";
+const url = "http://51.89.164.147:80/usuarios/login_token";
 // Variables
 var token = localStorage.getItem('token');
 if (token) location.href = "reporte.html";

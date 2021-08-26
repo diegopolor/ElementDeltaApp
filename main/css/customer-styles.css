@@ -1,5 +1,6 @@
 /* ----------- ESTILOS PERSONALIZADOS ----------- */
 
+/* Pagina de reportes */
 .border-bottom-reports{  
     border-bottom: 2px solid #ffa800;  
 }
@@ -11,5 +12,74 @@
 
 .fontsize-reports-title{
     font-size: 22px;
+}
+
+
+/* Pagina de perfil de usuarios*/
+
+.profile-picture{
+    width: 500px;
+    height: 500px;
+    background-image: url("../../images/avatar/logo_ElementDelta.jpg");
+}
+
+.profile-right{
+    float: right;
 
 }
+
+/* zona señales */
+
+/* bg de señale*/
+.bg-signals{
+    background-color: #08101E !important ; 
+}
+
+/* imagen de señales */
+
+.img-signal{
+    width: 40px;
+    border-radius: 20px;
+
+}
+
+/*etiqueta de analissi */
+.box-body {
+    padding: 1rem 2rem  ;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    border-radius: 5px;
+
+}
+
+/* Zona Analisis*/
+.card-analisys{
+    background: rgb(30,34,45);
+    background: linear-gradient(90deg, rgba(30,34,45,1) 0%, rgba(30,34,45,1) 48%, rgba(30,34,45,1) 100%);
+    height: 100%;
+}
+
+.img-analisys{
+    width: 100%;
+    object-fit: cover !important;
+
+}
+
+.analisys-user{
+    margin: 20px 0px;
+    display:flex;
+    align-items: center;
+
+}
+
+.analisys-info{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+
+
+}
+
+
+.text-money{color: #57e434;}
+.text-element {color: #1db1ae}

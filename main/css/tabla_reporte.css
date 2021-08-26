@@ -95,11 +95,7 @@ border-right-color: rgba(255, 255, 255, 0.12);
 }
 
 .tab-content > div {
-
     border-radius: 5px;
-    padding: 2%;
-    margin: 2% 0 2% 0;
-
 }
 
 .text-money{color: #57e434;}
